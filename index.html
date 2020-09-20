@@ -6,6 +6,24 @@
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" type="text/css" href="test-css.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script>
+	$(function(){
+	   // #で始まるアンカーをクリックした場合に処理
+	   $('a[href^=#]').click(function() {
+		  // スクロールの速度
+		  var speed = 400; // ミリ秒
+		  // アンカーの値取得
+		  var href= $(this).attr("href");
+		  // 移動先を取得
+		  var target = $(href == "#" || href == "" ? 'html' : href);
+		  // 移動先を数値で取得
+		  var position = target.offset().top;
+		  // スムーススクロール
+		  $('body,html').animate({scrollTop:position}, speed, 'swing');
+		  return false;
+	   });
+	});
+	</script>
  </head>
  <body>
 	<header>
@@ -16,10 +34,10 @@
 						<a class="eriga" href="#">home</a>
 					</li>
 					<li class="fjaj">
-						<a class="eriga" href="#">profile</a>
+						<a class="eriga" href="#Profile">profile</a>
 					</li>
 					<li class="fjaj">
-					<a class="eriga" href="#">Works</a>
+					<a class="eriga" href="#Works">Works</a>
 					</li>
 				</ul>
 			</div>
@@ -35,7 +53,7 @@
 					<img src="3412395_s.jpg">
 				</div>
 				<div class="gvd">
-					<div class="fjal">profile</div>
+					<div class="fjal" id="Profile">profile</div>
 					<div class="cjgr">
 						<div class="name">name</div>
 						<div class="nameho">田畑一樹</div>
@@ -48,7 +66,7 @@
 				
 			</div>
 			<div class="marginT">
-				<h2 class="fjal">Works</h2>
+				<h2 class="fjal"　id="Works">Works</h2>
 			</div>
 
 			<h3 class="color">1.Calculator</h3>
