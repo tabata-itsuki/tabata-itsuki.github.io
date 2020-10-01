@@ -1,0 +1,68 @@
+div.backcolor {
+    background: #3ed6c2;
+    width: 380px;
+    text-align: right;
+    margin: 0 auto;
+}
+div.flex{
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+}
+div.position {
+    text-align: center;
+    height: 45px;
+    width: 100%;
+    line-height: 50px;
+}
+p#result {
+    font-size: 24px;
+    padding: 0;
+    display: block;
+    margin: auto 0;
+    font-weight: bold;
+}
+.row {
+    display: flex;
+    width: 100%;
+    margin-bottom: auto;
+}
+.block{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+}
+div.style {
+    cursor: pointer;
+    text-align: center;
+    border: 1px black solid;
+    height: 45px;
+    width: 80px;
+    background-color: white;
+    border-radius: 17px;
+    line-height: 45px;
+    user-select: none; /* CSS3 */
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari、Chromeなど */
+    -ms-user-select: none; /* IE10かららしい */
+    box-shadow: 1px 1px 1px;
+    font-weight: bold;
+}
+div.style:hover {
+    background: rgb(206, 208, 208);
+}
+div.selected{
+    background-color: rgb(206, 208, 208);
+}
+div#clear {
+    width: 70%;
+    margin: auto;
+}
+.sign{
+    margin-right: auto;
+}
+div#zero{
+    width: 70%;
+    margin: auto;
+}
