@@ -3,27 +3,9 @@
  <head>
 	 <meta charset="utf-8">
 	 
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="Mycalculator/css/main.css">
 	<link rel="stylesheet" type="text/css" href="test-css.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<script>
-	$(function(){
-	   // #で始まるアンカーをクリックした場合に処理
-	   $('a[href^=#]').click(function() {
-		  // スクロールの速度
-		  var speed = 400; // ミリ秒
-		  // アンカーの値取得
-		  var href= $(this).attr("href");
-		  // 移動先を取得
-		  var target = $(href == "#" || href == "" ? 'html' : href);
-		  // 移動先を数値で取得
-		  var position = target.offset().top;
-		  // スムーススクロール
-		  $('body,html').animate({scrollTop:position}, speed, 'swing');
-		  return false;
-	   });
-	});
-	</script>
  </head>
  <body>
 	<header>
@@ -31,7 +13,7 @@
 			<div class="fjskljf">
 				<ul class="xjgsl">
 					<li class="fjaj">
-						<a class="eriga" href="#">home</a>
+						<a class="eriga" href="#">Home</a>
 					</li>
 					<li class="fjaj">
 						<a class="eriga" href="#Profile">profile</a>
@@ -66,47 +48,67 @@
 				
 			</div>
 			<div class="marginT">
-				<h2 class="fjal"　id="Works">Works</h2>
+				<h2 class="fjal" id="Works">Works</h2>
 			</div>
-
-			<h3 class="color">1.Calculator</h3>
-			<!-- ここから電卓のhtml -->
-			<div class="backcolor">
-				<div class="flex">
-					<div class="position">
-						<p id="result">0</p>
-					</div>
-					<div class="row">
-						<div class="style" id="clear">ac</div>
-						<div class="style sign" id="sum">+</div>
-					</div>
-					<div class="row">
-						<div class="block">
-							<div class="style btn">1</div>
-							<div class="style btn">2</div>   
-							<div class="style btn">3</div>
+			<div class="flex">
+				<div class="widthS">
+					<h3 class="color">1.Calculator</h3>
+					<!-- ここから電卓のhtml -->
+					<div class="backcolor">
+						<div class="flex">
+							<div class="position">
+								<p id="result">0</p>
+							</div>
+							<div class="row">
+								<div class="style" id="clear">ac</div>
+								<div class="style sign" id="sum">+</div>
+							</div>
+							<div class="row">
+								<div class="block">
+									<div class="style btn">1</div>
+									<div class="style btn">2</div>   
+									<div class="style btn">3</div>
+								</div>
+								<div class="style sign" id="difference">-</div>
+							</div>
+							<div class="row">
+								<div class="block">
+									<div class="style btn">4</div>
+									<div class="style btn">5</div>
+									<div class="style btn">6</div>
+								</div>
+								<div class="style sign" id="multiplication">×</div>
+							</div>
+							<div class="row">
+								<div class="block">
+									<div class="style btn">7</div>
+									<div class="style btn">8</div>
+									<div class="style btn">9</div>
+								</div>
+								<div class="style sign" id="division">÷</div>
+							</div>
+							<div class="row">
+								<div class="style btn" id="zero">0</div>
+								<div class="style sign" id="enter">=</div>
+							</div>
 						</div>
-						<div class="style sign" id="difference">-</div>
 					</div>
-					<div class="row">
-						<div class="block">
-							<div class="style btn">4</div>
-							<div class="style btn">5</div>
-							<div class="style btn">6</div>
+				</div>
+				<div class="size widthS">
+					<h3 class="color">２．airbnbの模写</h3>
+					<div class="sizeImg" id="imgbtn">
+						<img src="スクリーンショット 2020-09-29 7.27.40.png" class="box">
+						<div class="eighty fade-in-bottom hidden">
+							画像をクリック
 						</div>
-						<div class="style sign" id="multiplication">×</div>
 					</div>
-					<div class="row">
-						<div class="block">
-							<div class="style btn">7</div>
-							<div class="style btn">8</div>
-							<div class="style btn">9</div>
-						</div>
-						<div class="style sign" id="division">÷</div>
-					</div>
-					<div class="row">
-						<div class="style btn" id="zero">0</div>
-						<div class="style sign" id="enter">=</div>
+				</div>
+			</div>
+			<div class="fixed hidden" id="fade">
+				<div class="bttn">×</div>
+				<div class="flex center">
+					<div class="cotain">
+						<img src="airbnbCopy.png" alt="">
 					</div>
 				</div>
 			</div>
@@ -114,6 +116,7 @@
 			src="https://code.jquery.com/jquery-3.5.1.js"
 			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 			crossorigin="anonymous"></script>
-		<script src="main.js"></script>
+		<script src="Mycalculator/js/main.js"></script>
+		<script src="sub.js"></script>
  </body>
  </html>
