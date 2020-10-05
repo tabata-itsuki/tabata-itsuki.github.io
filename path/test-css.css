@@ -31,7 +31,7 @@ a.eriga {
 .iojgsl{
   height: 700px;
   width: 100%;
-  background-image: url(3205367_m.jpg);
+  background-image: url(../3205367_m.jpg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +111,7 @@ img {
     color: white;
 }
 div#achivement {
-  background-image: url(2198766_s.jpg);
+  background-image: url(../2198766_s.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 540px;
