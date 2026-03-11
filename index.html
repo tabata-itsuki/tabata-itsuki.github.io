@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>エクストリーム介護入門 - 安心のロードマップ</title>
+    <title>介護入門</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -22,6 +22,21 @@
         @media (max-width: 768px) {
             .roadmap-line::before { left: 20px; }
         }
+        .img-container {
+            position: relative;
+            width: 100%;
+            background-color: #f3f4f6;
+            overflow: hidden;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .card-hover:hover .img-container img {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -34,10 +49,9 @@
 
     <!-- Navigation -->
     <nav class="sticky top-0 bg-white shadow-md z-50 overflow-x-auto">
-        <div class="max-w-6xl mx-auto flex justify-between px-6 py-4 whitespace-nowrap space-x-6 text-sm md:text-base font-bold">
-            <a href="#mindset" class="hover:text-blue-600 transition">極意</a>
+        <div class="max-w-7xl mx-auto flex justify-between px-6 py-4 whitespace-nowrap space-x-6 text-sm md:text-base font-bold">
             <a href="#phases" class="hover:text-blue-600 transition">3つのフェーズ</a>
-            <a href="#care-levels" class="hover:text-blue-600 transition">要介護度・施設詳細</a>
+            <a href="#care-levels" class="hover:text-blue-600 transition">要介護度詳細</a>
             <a href="#facility-detail" class="hover:text-blue-600 transition">施設形態比較</a>
             <a href="#money" class="hover:text-blue-600 transition">お金と仕事</a>
         </div>
@@ -45,334 +59,314 @@
 
     <main class="max-w-7xl mx-auto px-6 py-12">
 
-        <!-- 1. Mindset Section -->
-        <section id="mindset" class="mb-20">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">1. 介護を始める前の極意</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover">
-                    <div class="text-blue-600 text-4xl mb-4">🤝</div>
-                    <h3 class="font-bold text-xl mb-2">個人戦ではなくチーム戦</h3>
-                    <p class="text-gray-600 leading-relaxed italic text-sm">「一人でやる」は破滅への道。</p>
-                    <p class="text-gray-600 leading-relaxed mt-2">家族、地域、国、民間のサービスを全て使ってチームを組みましょう。</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover">
-                    <div class="text-blue-600 text-4xl mb-4">💰</div>
-                    <h3 class="font-bold text-xl mb-2">「親のお金」を使う</h3>
-                    <p class="text-gray-600 leading-relaxed italic text-sm">自分の貯金に手を出すな。</p>
-                    <p class="text-gray-600 leading-relaxed mt-2">介護は親の人生の延長。親の年金・貯蓄を把握し、その範囲でプランを立てるのが基本です。</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 card-hover">
-                    <div class="text-blue-600 text-4xl mb-4">📖</div>
-                    <h3 class="font-bold text-xl mb-2">情報こそが最大の武器</h3>
-                    <p class="text-gray-600 leading-relaxed italic text-sm">無知はパニックを招く。</p>
-                    <p class="text-gray-600 leading-relaxed mt-2">制度を知れば、お金や体力がなくても道は開けます。パニックになる前に地図を手に入れましょう。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. Care Phases Section -->
+        <!-- 1. Care Phases Section -->
         <section id="phases" class="mb-20">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">2. 介護の3つのフェーズ</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">1. 介護の3つのフェーズ</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="relative p-6 bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 bg-blue-100 text-blue-600 font-bold rounded-bl-3xl">初期</div>
-                    <h3 class="font-bold text-xl mb-4 pt-4">準備と予防フェーズ</h3>
-                    <p class="text-sm text-gray-500 mb-4">【目安：要支援1〜2 / 要介護1】</p>
-                    <ul class="text-sm space-y-3 text-gray-600">
-                        <li>✅ 「あれ？」という異変を見逃さない</li>
-                        <li>✅ 地域の「包括センター」と繋がる</li>
-                        <li>✅ 親の資産状況をヒアリングする</li>
-                        <li>✅ 手すり設置などの住宅改修を検討</li>
-                    </ul>
+                    <h3 class="font-bold text-xl mb-4 pt-4">準備・予防</h3>
+                    <p class="text-xs text-gray-500 mb-2 font-bold">要支援1〜2</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">「あれ？」という小さな変化。自立した生活は可能だが、一部支援が必要な状態。</p>
                 </div>
                 <div class="relative p-6 bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden border-l-4 border-l-green-400">
                     <div class="absolute top-0 right-0 p-4 bg-green-100 text-green-600 font-bold rounded-bl-3xl">中期</div>
-                    <h3 class="font-bold text-xl mb-4 pt-4">生活支援フェーズ</h3>
-                    <p class="text-sm text-gray-500 mb-4">【目安：要介護2〜3】</p>
-                    <ul class="text-sm space-y-3 text-gray-600">
-                        <li>✅ 入浴・排泄の介助が必要になる</li>
-                        <li>✅ デイサービス等で外部との交流を増やす</li>
-                        <li>✅ 介護者のレスパイト（休息）を確保</li>
-                        <li>✅ 認知症の症状が進み、目が離せなくなる</li>
-                    </ul>
+                    <h3 class="font-bold text-xl mb-4 pt-4">生活支援</h3>
+                    <p class="text-xs text-gray-500 mb-2 font-bold">要介護1〜3</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">入浴や排泄、立ち上がりに介助が必要。認知症の症状が顕著になり始める時期。</p>
                 </div>
                 <div class="relative p-6 bg-white border border-gray-200 rounded-3xl shadow-sm overflow-hidden border-l-4 border-l-red-400">
                     <div class="absolute top-0 right-0 p-4 bg-red-100 text-red-600 font-bold rounded-bl-3xl">末期</div>
-                    <h3 class="font-bold text-xl mb-4 pt-4">全面介助・看取りフェーズ</h3>
-                    <p class="text-sm text-gray-500 mb-4">【目安：要介護4〜5】</p>
-                    <ul class="text-sm space-y-3 text-gray-600">
-                        <li>✅ 寝たきり状態、意思疎通が困難に</li>
-                        <li>✅ 特別養護老人ホーム等への入居を検討</li>
-                        <li>✅ 医療的ケア（経管栄養など）の判断</li>
-                        <li>✅ 「どこで最期を迎えるか」の最終決定</li>
-                    </ul>
+                    <h3 class="font-bold text-xl mb-4 pt-4">全面介助</h3>
+                    <p class="text-xs text-gray-500 mb-2 font-bold">要介護4〜5</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">寝たきり状態が中心。意思疎通が困難になり、24時間の見守りと介助が不可欠。</p>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Care Levels Table Section -->
+        <!-- 2. Care Levels Detail Table -->
         <section id="care-levels" class="mb-20">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">3. 要介護度別の状態目安</h2>
-            <div class="overflow-x-auto bg-white rounded-3xl shadow-md mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">2. 要介護度別の状態・支給額目安</h2>
+            <div class="overflow-x-auto bg-white rounded-3xl shadow-md">
                 <table class="w-full text-left min-w-[800px]">
                     <thead class="bg-gray-800 text-white">
                         <tr>
-                            <th class="p-4 rounded-tl-3xl">ランク</th>
-                            <th class="p-4">主な状態・症状の目安</th>
-                            <th class="p-4">支給限度額(目安)</th>
-                            <th class="p-4 rounded-tr-3xl">主なサービス内容</th>
+                            <th class="p-4 rounded-tl-3xl">要介護区分</th>
+                            <th class="p-4">主な状態</th>
+                            <th class="p-4 text-center">支給限度額(目安)</th>
+                            <th class="p-4 rounded-tr-3xl text-center">おすすめの施設形態</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100">
                         <tr class="hover:bg-blue-50 transition">
-                            <td class="p-4 font-bold text-blue-600">要支援1〜2</td>
-                            <td class="p-4 text-sm">身の回りの動作に一部介助が必要。歩行が不安定。</td>
-                            <td class="p-4 font-bold text-sm">5〜10万円</td>
-                            <td class="p-4 text-xs text-gray-500">予防給付、週数回の通所など</td>
+                            <td class="p-4 font-bold text-blue-600">要支援 1〜2</td>
+                            <td class="p-4 text-sm text-gray-600">家事の一部に手助けが必要。歩行がやや不安定。</td>
+                            <td class="p-4 text-center font-bold">5〜10.5万円</td>
+                            <td class="p-4 text-center text-sm font-bold text-blue-700">在宅・サ高住</td>
                         </tr>
                         <tr class="hover:bg-green-50 transition">
-                            <td class="p-4 font-bold text-green-600">要介護1〜2</td>
-                            <td class="p-4 text-sm">排泄や入浴の一部に介助が必要。立ち上がりに困難。</td>
-                            <td class="p-4 font-bold text-sm">16〜20万円</td>
-                            <td class="p-4 text-xs text-gray-500">介護給付、デイ、訪問介護など</td>
+                            <td class="p-4 font-bold text-green-600">要介護 1〜2</td>
+                            <td class="p-4 text-sm text-gray-600">排泄や入浴に軽度の介助が必要。認知症の初期症状。</td>
+                            <td class="p-4 text-center font-bold">16.7〜19.7万円</td>
+                            <td class="p-4 text-center text-sm font-bold text-green-700">グループホーム・有料</td>
+                        </tr>
+                        <tr class="hover:bg-orange-50 transition">
+                            <td class="p-4 font-bold text-orange-600">要介護 3</td>
+                            <td class="p-4 text-sm text-gray-600">自力歩行困難。排泄・着替えに全面的な介助が必要。</td>
+                            <td class="p-4 text-center font-bold text-xl">27.0万円</td>
+                            <td class="p-4 text-center text-sm font-bold text-orange-700 border-2 border-orange-200">特養入居可能ライン</td>
                         </tr>
                         <tr class="hover:bg-red-50 transition">
-                            <td class="p-4 font-bold text-red-600">要介護3〜5</td>
-                            <td class="p-4 text-sm">全面的な介助が必要。寝たきり、意思疎通困難。</td>
-                            <td class="p-4 font-bold text-sm">27〜36万円</td>
-                            <td class="p-4 text-xs text-gray-500">特養入居可能、24時間介助</td>
+                            <td class="p-4 font-bold text-red-600">要介護 4〜5</td>
+                            <td class="p-4 text-sm text-gray-600">寝たきり、意思疎通困難。日常生活全般に全介助。</td>
+                            <td class="p-4 text-center font-bold">31〜36.2万円</td>
+                            <td class="p-4 text-center text-sm font-bold text-red-700">特養・介護型有料</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- 4. Facility Detailed Comparison Section -->
+        <!-- 3. Facility Detail Comparison Section -->
         <section id="facility-detail" class="mb-20">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">4. 施設形態のビジュアル比較</h2>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8 border-l-8 border-blue-600 pl-4">
+                <h2 class="text-2xl md:text-3xl font-bold">3. 施設形態の徹底比較</h2>
+                <p class="text-sm text-gray-500 font-bold mt-2 md:mt-0 italic underline decoration-blue-300 decoration-2">「自宅か施設か」×「設備の充実度」で決まる</p>
+            </div>
             
-            <div class="grid lg:grid-cols-2 gap-8">
+            <div class="grid lg:grid-cols-2 gap-10">
                 
-                <!-- 在宅介護 -->
-                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden card-hover">
-                    <div class="bg-blue-600 p-4 text-white font-bold flex justify-between items-center">
+                <!-- 1. 在宅介護 -->
+                <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden card-hover">
+                    <div class="bg-blue-600 p-5 text-white font-bold flex justify-between items-center">
                         <span>🏠 在宅介護（訪問・通所）</span>
-                        <span class="text-xs bg-white text-blue-600 px-2 py-1 rounded font-bold italic">自由度：高</span>
+                        <span class="text-[10px] bg-white text-blue-600 px-2 py-1 rounded-full font-bold">住み慣れた我が家</span>
                     </div>
-                    <div class="aspect-video bg-gray-200 flex items-center justify-center overflow-hidden">
-                        <div class="text-center p-4">
-                            <div class="text-4xl mb-2">🏠</div>
-                            <p class="text-gray-500 text-sm italic font-bold">[手すりや段差解消などの住宅改修がされた家庭の室内のイメージ]</p>
+                    <div class="grid grid-cols-2 gap-1 p-1 bg-gray-100">
+                        <div class="aspect-[4/3] img-container">
+                            <img src="at_home_exterior.jpg" alt="在宅介護の外観イメージ" onerror="this.src='https://placehold.jp/24/f3f4f6/6b7280/400x300.png?text=在宅介護%0A外観イメージ'">
+                        </div>
+                        <div class="aspect-[4/3] img-container">
+                            <img src="at_home_interior.jpg" alt="在宅介護の内観イメージ" onerror="this.src='https://placehold.jp/24/f3f4f6/6b7280/400x300.png?text=在宅介護%0A内観イメージ'">
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <p class="text-xs font-bold text-gray-400 uppercase mb-1">建物の特徴</p>
-                            <p class="text-sm">住み慣れた「我が家」。必要に応じて手すり設置や段差解消の改修を行う。</p>
+                    <div class="p-8">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 text-[10px] font-bold px-2 py-1 rounded mr-3 mt-1 whitespace-nowrap">構造</span>
+                                <p class="text-sm text-gray-700"><strong>訪問：</strong>自宅が生活の場なので「施設」自体はなし。<strong>通所（デイ）：</strong>日帰り施設。大広間・食堂・入浴設備が中心。</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 text-[10px] font-bold px-2 py-1 rounded mr-3 mt-1 whitespace-nowrap">費用</span>
+                                <p class="text-sm text-gray-700 font-bold">月額 5 〜 15 万円</p>
+                            </div>
                         </div>
-                        <div class="mb-4 bg-gray-50 p-4 rounded-xl">
-                            <p class="text-xs font-bold text-gray-400 uppercase mb-2">1日のスケジュール例</p>
-                            <ul class="text-xs space-y-1">
-                                <li>08:00 起床・朝食（家族またはヘルパー）</li>
-                                <li>10:00 デイサービスへ出発（入浴・リハビリ）</li>
+                        <div class="bg-blue-50 p-5 rounded-2xl mb-6">
+                            <h4 class="text-xs font-bold text-blue-800 mb-2 flex items-center">🕒 1日のスケジュール例</h4>
+                            <ul class="text-[11px] text-gray-600 space-y-1">
+                                <li>08:00 起床・朝食（家族支援）</li>
+                                <li>10:00 デイ出発（入浴・リハビリ）</li>
                                 <li>16:00 帰宅・おやつ・自由時間</li>
-                                <li>18:00 夕食・服薬確認（訪問ヘルパー）</li>
+                                <li>18:30 夕食・服薬（訪問ヘルパー）</li>
                             </ul>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 text-sm border-t pt-4">
-                            <div>
-                                <p class="font-bold text-blue-700">関わり方</p>
-                                <p class="text-xs text-gray-600">必要な時間だけヘルパーや看護師が訪問。家族の役割も大きい。</p>
+                        <div class="grid grid-cols-2 gap-4 text-xs">
+                            <div class="border-r border-gray-100 pr-2">
+                                <p class="font-bold text-blue-800 mb-1">関わり方</p>
+                                <p class="text-gray-500 leading-tight text-[10px]">必要な時間だけ訪問。看護師は訪問時のみ。</p>
                             </div>
                             <div>
-                                <p class="font-bold text-blue-700">料金目安</p>
-                                <p class="text-xs text-gray-600 font-bold text-blue-800">月5〜15万円</p>
+                                <p class="font-bold text-blue-800 mb-1">運営・価値</p>
+                                <p class="text-gray-500 leading-tight text-[10px]">社福・株式会社。富裕層は自費ヘルパー利用も。</p>
                             </div>
-                        </div>
-                        <div class="mt-4 p-3 bg-blue-50 rounded-lg text-xs">
-                            <p class="font-bold mb-1 text-blue-800">サービス内容と運営</p>
-                            <p class="text-gray-700 leading-tight">基本サービスのみ。運営母体は社福、NPO、株式会社など様々。富裕層向けに「自費ヘルパー」などの付加価値サービスもあり。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- サービス付き高齢者向け住宅 -->
-                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden card-hover">
-                    <div class="bg-cyan-600 p-4 text-white font-bold flex justify-between items-center">
+                <!-- 2. サ高住 -->
+                <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden card-hover">
+                    <div class="bg-cyan-600 p-5 text-white font-bold flex justify-between items-center">
                         <span>🏢 サービス付き高齢者向け住宅（サ高住）</span>
-                        <span class="text-xs bg-white text-cyan-600 px-2 py-1 rounded font-bold italic">安心感：中</span>
+                        <span class="text-[10px] bg-white text-cyan-600 px-2 py-1 rounded-full font-bold">マンション形式</span>
                     </div>
-                    <div class="aspect-video bg-gray-200 flex items-center justify-center overflow-hidden">
-                        <div class="text-center p-4">
-                            <div class="text-4xl mb-2">🏢</div>
-                            <p class="text-gray-500 text-sm italic font-bold">[バリアフリーが徹底された近代的なシニア向けマンションの外観のイメージ]</p>
+                    <div class="grid grid-cols-2 gap-1 p-1 bg-gray-100">
+                        <div class="aspect-[4/3] img-container">
+                            <img src="sakoju_exterior.jpg" alt="サ高住の外観イメージ" onerror="this.src='https://placehold.jp/24/f3f4f6/6b7280/400x300.png?text=サ高住%0A外観イメージ'">
+                        </div>
+                        <div class="aspect-[4/3] img-container">
+                            <img src="sakoju_interior.jpg" alt="サ高住の内観イメージ" onerror="this.src='https://placehold.jp/24/f3f4f6/6b7280/400x300.png?text=サ高住%0A内観イメージ'">
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <p class="text-xs font-bold text-gray-400 uppercase mb-1">建物の特徴</p>
-                            <p class="text-sm">バリアフリーマンション。個室、キッチン付きも多い。外観は普通の高級マンションに近い。</p>
+                    <div class="p-8">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <span class="bg-cyan-100 text-cyan-600 text-[10px] font-bold px-2 py-1 rounded mr-3 mt-1 whitespace-nowrap">構造</span>
+                                <p class="text-sm text-gray-700 leading-relaxed"><strong>賃貸マンション構造。</strong>独立個室（キッチン付）。最低25㎡以上の基準あり。独立性が高く<strong>「自宅に近い」</strong>感覚。</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-cyan-100 text-cyan-600 text-[10px] font-bold px-2 py-1 rounded mr-3 mt-1 whitespace-nowrap">費用</span>
+                                <p class="text-sm text-gray-700 font-bold">月額 15 〜 25 万円</p>
+                            </div>
                         </div>
-                        <div class="mb-4 bg-gray-50 p-4 rounded-xl">
-                            <p class="text-xs font-bold text-gray-400 uppercase mb-2">1日のスケジュール例</p>
-                            <ul class="text-xs space-y-1">
-                                <li>09:00 安否確認（スタッフの訪問）</li>
-                                <li>12:00 共用食堂でランチ・談笑</li>
-                                <li>14:00 自由時間（外出や買い物も自由）</li>
-                                <li>20:00 夜間見守り・就寝</li>
+                        <div class="bg-cyan-50 p-5 rounded-2xl mb-6">
+                            <h4 class="text-xs font-bold text-cyan-800 mb-2 flex items-center">🕒 1日のスケジュール例</h4>
+                            <ul class="text-[11px] text-gray-600 space-y-1">
+                                <li>09:00 安否確認（スタッフの声掛け）</li>
+                                <li>12:00 食堂でランチ（または自炊）</li>
+                                <li>14:00 自由時間（外出・買い物も可能）</li>
+                                <li>20:00 相談窓口スタッフ対応・就寝</li>
                             </ul>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 text-sm border-t pt-4">
-                            <div>
-                                <p class="font-bold text-cyan-700">関わり方</p>
-                                <p class="text-xs text-gray-600">フロントにコンシェルジュ常駐。介護は外部事業所と別途契約。</p>
+                        <div class="grid grid-cols-2 gap-4 text-xs">
+                            <div class="border-r border-gray-100 pr-2">
+                                <p class="font-bold text-cyan-800 mb-1">関わり方</p>
+                                <p class="text-gray-500 leading-tight text-[10px]">コンシェルジュ的支援。介護は外部契約。</p>
                             </div>
                             <div>
-                                <p class="font-bold text-cyan-700">料金目安</p>
-                                <p class="text-xs text-gray-600 font-bold text-cyan-800">月15〜25万円</p>
+                                <p class="font-bold text-cyan-800 mb-1">運営・価値</p>
+                                <p class="text-gray-500 leading-tight text-[10px]">不動産・株式会社。プライバシー重視派向け。</p>
                             </div>
-                        </div>
-                        <div class="mt-4 p-3 bg-cyan-50 rounded-lg text-xs">
-                            <p class="font-bold mb-1 text-cyan-800">サービス内容と運営</p>
-                            <p class="text-gray-700 leading-tight">安否確認・相談がメイン。運営母体は不動産・建築系、介護系（株式会社）が主流。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 特別養護老人ホーム -->
-                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden card-hover">
-                    <div class="bg-emerald-600 p-4 text-white font-bold flex justify-between items-center">
+                <!-- 3. 特養 -->
+                <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden card-hover">
+                    <div class="bg-emerald-600 p-5 text-white font-bold flex justify-between items-center">
                         <span>🏥 特別養護老人ホーム（特養）</span>
-                        <span class="text-xs bg-white text-emerald-600 px-2 py-1 rounded font-bold italic">公共性：高</span>
+                        <span class="text-[10px] bg-white text-emerald-600 px-2 py-1 rounded-full font-bold">公的介護施設</span>
                     </div>
-                    <div class="aspect-video bg-gray-200 flex items-center justify-center overflow-hidden">
-                        <div class="text-center p-4">
-                            <div class="text-4xl mb-2">🏥</div>
-                            <p class="text-gray-500 text-sm italic font-bold">[地域に根ざした大規模な公共福祉施設のような建物の外観のイメージ]</p>
+                    <div class="grid grid-cols-2 gap-1 p-1 bg-gray-100">
+                        <div class="aspect-[4/3] img-container">
+                            <img src="tokuyo_exterior.jpg" alt="特養の外観イメージ" onerror="this.src='https://placehold.jp/24/f3f4f6/6b7280/400x300.png?text=特養%0A外観イメージ'">
+                        </div>
+                        <div class="aspect-[4/3] img-container">
+                            <img src="tokuyo_interior.jpg" alt="特養の内観イメージ" onerror="this.src='https://placehold.jp/24/f3f4f6/6b7280/400x300.png?text=特養%0A内観イメージ'">
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <p class="text-xs font-bold text-gray-400 uppercase mb-1">建物の特徴</p>
-                            <p class="text-sm">多床室（相部屋）またはユニット型個室。病院や学校のような公共建築の佇まい。</p>
+                    <div class="p-8">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <span class="bg-emerald-100 text-emerald-600 text-[10px] font-bold px-2 py-1 rounded mr-3 mt-1 whitespace-nowrap">構造</span>
+                                <p class="text-sm text-gray-700 leading-relaxed"><strong>ユニット型主流。</strong>個室＋共同リビング。廊下が広く<strong>医療・リハビリ設備</strong>が非常に充実している。</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-emerald-100 text-emerald-600 text-[10px] font-bold px-2 py-1 rounded mr-3 mt-1 whitespace-nowrap">費用</span>
+                                <p class="text-sm text-gray-700 font-bold">月額 8 〜 15 万円</p>
+                            </div>
                         </div>
-                        <div class="mb-4 bg-gray-50 p-4 rounded-xl">
-                            <p class="text-xs font-bold text-gray-400 uppercase mb-2">1日のスケジュール例</p>
-                            <ul class="text-xs space-y-1">
-                                <li>07:30 起床・着替え介助</li>
-                                <li>12:00 昼食・口腔ケア</li>
-                                <li>14:00 レクリエーション・おやつ</li>
-                                <li>21:00 消灯（巡回による安否確認）</li>
+                        <div class="bg-emerald-50 p-5 rounded-2xl mb-6">
+                            <h4 class="text-xs font-bold text-emerald-800 mb-2 flex items-center">🕒 1日のスケジュール例</h4>
+                            <ul class="text-[11px] text-gray-600 space-y-1">
+                                <li>07:30 起床・着替え（全面介助）</li>
+                                <li>12:00 昼食（共同リビングで介助）</li>
+                                <li>14:30 リハビリ・レクリエーション</li>
+                                <li>21:00 消灯（スタッフの巡回）</li>
                             </ul>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 text-sm border-t pt-4">
-                            <div>
-                                <p class="font-bold text-emerald-700">関わり方</p>
-                                <p class="text-xs text-gray-600">常に施設スタッフが身近に。看護師も日中常駐し健康管理を行う。</p>
+                        <div class="grid grid-cols-2 gap-4 text-xs">
+                            <div class="border-r border-gray-100 pr-2">
+                                <p class="font-bold text-emerald-800 mb-1">関わり方</p>
+                                <p class="text-gray-500 leading-tight text-[10px]">施設ヘルパーが生活を支え、看護師が常駐。</p>
                             </div>
                             <div>
-                                <p class="font-bold text-emerald-700">料金目安</p>
-                                <p class="text-xs text-gray-600 font-bold text-emerald-800">月8〜15万円</p>
+                                <p class="font-bold text-emerald-800 mb-1">運営・価値</p>
+                                <p class="text-gray-500 leading-tight text-[10px]">社会福祉法人。終身利用可。待機者が多い。</p>
                             </div>
-                        </div>
-                        <div class="mt-4 p-3 bg-emerald-50 rounded-lg text-xs">
-                            <p class="font-bold mb-1 text-emerald-800">サービス内容と運営</p>
-                            <p class="text-gray-700 leading-tight">日常生活の全面介助。運営母体は社会福祉法人（非営利）。所得に応じて料金の減免措置あり。</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 介護付き有料老人ホーム -->
-                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden card-hover">
-                    <div class="bg-indigo-600 p-4 text-white font-bold flex justify-between items-center">
+                <!-- 4. 介護付き有料 -->
+                <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden card-hover border-t-4 border-t-indigo-500">
+                    <div class="bg-indigo-600 p-5 text-white font-bold flex justify-between items-center">
                         <span>🏩 介護付き有料老人ホーム（介護型）</span>
-                        <span class="text-xs bg-white text-indigo-600 px-2 py-1 rounded font-bold italic">付加価値：最高</span>
+                        <span class="text-[10px] bg-white text-indigo-600 px-2 py-1 rounded-full font-bold">民間ホテル形式</span>
                     </div>
-                    <div class="aspect-video bg-gray-200 flex items-center justify-center overflow-hidden">
-                        <div class="text-center p-4">
-                            <div class="text-4xl mb-2">✨</div>
-                            <p class="text-gray-500 text-sm italic font-bold">[高級ホテルのロビーや個室のような、豪華で落ち着いた内装のイメージ]</p>
+                    <div class="grid grid-cols-2 gap-1 p-1 bg-gray-100">
+                        <div class="aspect-[4/3] img-container">
+                            <img src="private_home_exterior.jpg" alt="有料ホームの外観イメージ" onerror="this.src='https://placehold.jp/24/f3f4f6/6b7280/400x300.png?text=有料ホーム%0A外観イメージ'">
+                        </div>
+                        <div class="aspect-[4/3] img-container">
+                            <img src="private_home_interior.jpg" alt="有料ホームの内観イメージ" onerror="this.src='https://placehold.jp/24/f3f4f6/6b7280/400x300.png?text=有料ホーム%0A内観イメージ'">
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <p class="text-xs font-bold text-gray-400 uppercase mb-1">建物の特徴</p>
-                            <p class="text-sm">ホテルのような内装。完全個室でプライバシー重視。共有部にはレストランやラウンジがある。</p>
+                    <div class="p-8">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <span class="bg-indigo-100 text-indigo-600 text-[10px] font-bold px-2 py-1 rounded mr-3 mt-1 whitespace-nowrap">構造</span>
+                                <p class="text-sm text-gray-700 leading-relaxed">特養に近い機能性＋<strong>高いグレード。</strong>レストラン風の食堂や趣味室。豪華さの幅が非常に広い。</p>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-indigo-100 text-indigo-600 text-[10px] font-bold px-2 py-1 rounded mr-3 mt-1 whitespace-nowrap">費用</span>
+                                <p class="text-sm text-gray-700 font-bold">月額 20 〜 50 万円＋α</p>
+                            </div>
                         </div>
-                        <div class="mb-4 bg-gray-50 p-4 rounded-xl">
-                            <p class="text-xs font-bold text-gray-400 uppercase mb-2">1日のスケジュール例</p>
-                            <ul class="text-xs space-y-1">
-                                <li>08:30 朝食（専属シェフによる提供も）</li>
-                                <li>10:30 理学療法士による個別リハビリ</li>
-                                <li>15:00 ティータイム・趣味のサークル活動</li>
-                                <li>19:00 入浴介助（個別の機械浴など）</li>
+                        <div class="bg-indigo-50 p-5 rounded-2xl mb-6">
+                            <h4 class="text-xs font-bold text-indigo-800 mb-2 flex items-center">🕒 1日のスケジュール例</h4>
+                            <ul class="text-[11px] text-gray-600 space-y-1">
+                                <li>08:30 朝食（専属シェフの料理）</li>
+                                <li>11:00 理学療法士の個別リハビリ</li>
+                                <li>15:00 カフェタイム・趣味活動</li>
+                                <li>19:30 個別入浴（最新設備）</li>
                             </ul>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 text-sm border-t pt-4">
-                            <div>
-                                <p class="font-bold text-indigo-700">関わり方</p>
-                                <p class="text-xs text-gray-600">手厚い人員配置。24時間看護師常駐、看取りまで対応する施設も多い。</p>
+                        <div class="grid grid-cols-2 gap-4 text-xs">
+                            <div class="border-r border-gray-100 pr-2">
+                                <p class="font-bold text-indigo-800 mb-1">関わり方</p>
+                                <p class="text-gray-500 leading-tight text-[10px]">24時間看護師常駐。看取りまでのホスピタリティ。</p>
                             </div>
                             <div>
-                                <p class="font-bold text-indigo-700">料金目安</p>
-                                <p class="text-xs text-gray-600 font-bold text-indigo-800">月20〜50万円以上</p>
+                                <p class="font-bold text-indigo-800 mb-1">運営・価値</p>
+                                <p class="text-gray-500 leading-tight text-[10px]">株式会社。個別の要望への柔軟性が高い。</p>
                             </div>
-                        </div>
-                        <div class="mt-4 p-3 bg-indigo-50 rounded-lg text-xs">
-                            <p class="font-bold mb-1 text-indigo-800">サービス内容と運営</p>
-                            <p class="text-gray-700 leading-tight">質の高い個別ケア。運営母体は大手株式会社。高級志向では入居金数千万円の施設も存在。</p>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </section>
 
-        <!-- 5. Roadmap Section -->
-        <section id="roadmap" class="mb-20">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">5. 手続きのロードマップ</h2>
-            <div class="relative roadmap-line">
-                <div class="relative z-10 flex flex-col md:flex-row items-center mb-12">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4 md:mb-0 md:mr-8 shadow-md">1</div>
-                    <div class="bg-white p-6 rounded-2xl shadow-md flex-1 w-full">
-                        <h3 class="font-bold text-lg text-blue-800">自治体へ申請</h3>
-                        <p class="mt-2 text-gray-600">親の「介護保険証」を持って役所へ。申請した日からサービスは利用可能です。</p>
+            <!-- Summary Analysis -->
+            <div class="mt-12 bg-gray-900 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 text-[200px] opacity-10 font-bold">!</div>
+                <h3 class="text-2xl font-bold mb-8 flex items-center">
+                    <span class="w-2 h-8 bg-yellow-400 mr-4"></span>
+                    施設選びの「大きな違い」を一言で
+                </h3>
+                <div class="grid md:grid-cols-2 gap-10 relative z-10">
+                    <div class="border-l border-yellow-400 pl-6">
+                        <h4 class="text-yellow-400 font-bold mb-3 flex items-center">
+                            🏠 自宅に近いか ／ 施設に近いか
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed italic mb-2">「生活の独立性」の軸</p>
+                        <p class="text-xs text-gray-500">プライバシーと自由度を重視するなら「在宅・サ高住」。プロの見守りと安心を優先するなら「特養・有料」へ。</p>
                     </div>
-                </div>
-                <div class="relative z-10 flex flex-col md:flex-row items-center mb-12">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4 md:mb-0 md:mr-8 shadow-md">2</div>
-                    <div class="bg-white p-6 rounded-2xl shadow-md flex-1 w-full border-2 border-orange-200">
-                        <h3 class="font-bold text-lg text-orange-800">訪問調査と「親の記録」</h3>
-                        <p class="mt-2 text-gray-600">調査員は現状を見ます。**「普段の異変」**を伝えるメモを必ず用意してください。</p>
-                    </div>
-                </div>
-                <div class="relative z-10 flex flex-col md:flex-row items-center">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4 md:mb-0 md:mr-8 shadow-md">3</div>
-                    <div class="bg-white p-6 rounded-2xl shadow-md flex-1 w-full">
-                        <h3 class="font-bold text-lg text-blue-800">ケアプラン作成</h3>
-                        <p class="mt-2 text-gray-600">ケアマネジャーと相談し、最適なサービスパズルを組みます。</p>
+                    <div class="border-l border-yellow-400 pl-6">
+                        <h4 class="text-yellow-400 font-bold mb-3 flex items-center">
+                            🩺 医療・介護設備の充実度
+                        </h4>
+                        <p class="text-sm text-gray-400 leading-relaxed italic mb-2">「身体的な安心」の軸</p>
+                        <p class="text-xs text-gray-500">車椅子動線や医務室、看取り体制が整っているかどうかが、状況が悪化した時の「終の棲家」になれるかの境界線です。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. Money Section -->
+        <!-- 4. Money and Work Section -->
         <section id="money" class="mb-20">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">6. お金と仕事</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 border-l-8 border-blue-600 pl-4">4. お金と仕事のリアル</h2>
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <h3 class="font-bold text-xl mb-4">介護離職を防ぐ「介護休業」</h3>
-                    <p class="text-sm text-gray-600 mb-4">年間最大93日。給付金で賃金の約67%がカバーされます。仕事を辞める前に必ず会社に相談しましょう。</p>
-                    <div class="bg-gray-800 text-white p-4 rounded-xl text-center">
-                        <p class="text-xs opacity-70">平均再就職後の年収ダウン率</p>
-                        <p class="text-3xl font-bold text-red-400">40% ダウン</p>
-                    </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-yellow-500 card-hover">
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">親の財布を「100歳」まで割り振る</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">「いくらかかるか」ではなく、親の年金と貯蓄を「残り寿命」で割り、<strong>「いくらかけるか」</strong>を主導権を持って決めます。子の資金は温存するのが鉄則です。</p>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <h3 class="font-bold text-xl mb-4">予算は「親の財布」から</h3>
-                    <p class="text-sm text-gray-600 mb-4">親の年金と貯蓄を「100歳プラン」で割り、年間の上限予算を決めます。自分の生活を犠牲にしないことが、長期継続の秘訣です。</p>
-                    <div class="bg-blue-50 p-4 rounded-xl text-blue-800 font-bold text-center">
-                        「いくらかかるか」より「いくらかけるか」
+                <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-red-500 card-hover">
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">介護離職は「人生の再起」を阻む</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">仕事を辞めると再就職後の年収が<strong>平均40%ダウン</strong>します。自分の人生を壊さないため、法律が定める「介護休業制度」を必ず利用しましょう。</p>
+                    <div class="bg-gray-800 text-white p-5 rounded-2xl">
+                        <p class="text-xs text-yellow-400 font-bold mb-1">【介護休業制度の権利】</p>
+                        <p class="text-lg font-bold">年間最大 <span class="text-3xl">93</span> 日間</p>
+                        <p class="text-[10px] opacity-60">※賃金の約67%が支給される給付金制度あり</p>
                     </div>
                 </div>
             </div>
@@ -381,12 +375,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-6 text-center">
-        <h2 class="text-2xl font-bold mb-4">地域包括支援センターを今すぐ検索！</h2>
-        <p class="text-sm opacity-50 mb-8">&copy; 2024 Extreme Nursing Care Guide</p>
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-blue-700 transition font-bold">
+    <footer class="bg-gray-900 text-white py-16 px-6 text-center">
+        <h2 class="text-2xl font-bold mb-4 italic">「知る」ことが、最良の介護の第一歩。</h2>
+        <p class="text-sm opacity-50 mb-10 leading-relaxed">「中学校の数と同じぐらい」あなたの街にも必ずあります。<br>まずはそこに行き、無料で相談しましょう。</p>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-blue-600 text-white px-10 py-4 rounded-full shadow-lg hover:bg-blue-700 transition font-bold">
             トップへ戻る
         </button>
+        <p class="mt-12 text-[10px] opacity-30 uppercase tracking-widest">&copy; 2024 Extreme Society Nursing Care Guide</p>
     </footer>
 
 </body>
